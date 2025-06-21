@@ -1,8 +1,6 @@
 <img src="https://wcm.io/images/favicon-16@2x.png"/> WCM Granite UI Extensions Sample Application
 ======
 [![Build](https://github.com/wcm-io/io.wcm.wcm.ui.granite.sample-app/workflows/Build/badge.svg?branch=develop)](https://github.com/wcm-io/io.wcm.wcm.ui.granite.sample-app/actions?query=workflow%3ABuild+branch%3Adevelop)
-[![Maven Central](https://img.shields.io/maven-central/v/io.wcm/io.wcm.wcm.ui.granite.sample-app)](https://repo1.maven.org/maven2/io/wcm/io.wcm.wcm.ui.granite.sample-app/)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=wcm-io_io.wcm.wcm.ui.granite.sample-app&metric=coverage)](https://sonarcloud.io/summary/new_code?id=wcm-io_io.wcm.wcm.ui.granite.sample-app)
 
 Sample application / Test pad for Granite UI Components for AEM Touch UI.
 
