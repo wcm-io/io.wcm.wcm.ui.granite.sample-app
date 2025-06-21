@@ -14,10 +14,10 @@
                             sling:resourceType="wcm/core/components/policy/policy"
                             components="[/apps/wcmio-graniteui-sample-app/core/components/container/container,group:wcmio-graniteui-sample-app Templating]">
                             <jcr:content
-                                jcr:primaryType="nt:unstructured"
-                                jcr:mixinTypes="[cq:ReplicationStatus]"
                                 cq:lastReplicated="{Date}2025-06-21T00:00:00.000+02:00"
-                                cq:lastReplicationAction="Activate"/>
+                                cq:lastReplicationAction="Activate"
+                                jcr:mixinTypes="[cq:ReplicationStatus]"
+                                jcr:primaryType="nt:unstructured"/>
                         </root-container>
                         <experience-fragment
                             jcr:primaryType="nt:unstructured"
@@ -25,10 +25,10 @@
                             sling:resourceType="wcm/core/components/policy/policy"
                             components="[group:wcmio-graniteui-sample-app Container,group:wcmio-graniteui-sample-app Content]">
                             <jcr:content
-                                jcr:primaryType="nt:unstructured"
-                                jcr:mixinTypes="[cq:ReplicationStatus]"
                                 cq:lastReplicated="{Date}2025-06-21T00:00:00.000+02:00"
-                                cq:lastReplicationAction="Activate"/>
+                                cq:lastReplicationAction="Activate"
+                                jcr:mixinTypes="[cq:ReplicationStatus]"
+                                jcr:primaryType="nt:unstructured"/>
                             <cq:authoring jcr:primaryType="nt:unstructured">
                                 <assetToComponentMapping jcr:primaryType="nt:unstructured">
                                     <image
@@ -46,10 +46,10 @@
                             sling:resourceType="wcm/core/components/policy/policy"
                             components="[group:wcmio-graniteui-sample-app Container,group:wcmio-graniteui-sample-app Content]">
                             <jcr:content
-                                jcr:primaryType="nt:unstructured"
-                                jcr:mixinTypes="[cq:ReplicationStatus]"
                                 cq:lastReplicated="{Date}2025-06-21T00:00:00.000+02:00"
-                                cq:lastReplicationAction="Activate"/>
+                                cq:lastReplicationAction="Activate"
+                                jcr:mixinTypes="[cq:ReplicationStatus]"
+                                jcr:primaryType="nt:unstructured"/>
                             <cq:authoring jcr:primaryType="nt:unstructured">
                                 <assetToComponentMapping jcr:primaryType="nt:unstructured">
                                     <image

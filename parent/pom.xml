@@ -25,121 +25,31 @@
     <sling.url>http://localhost:4502</sling.url>
     <sling.publish.url>http://localhost:4503</sling.publish.url>
 
-    <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
-    <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
-
-    <!-- Versions -->
-    <mockito.version>5.18.0</mockito.version>
-
     <!-- Enable reproducible builds -->
     <project.build.outputTimestamp>2025-06-01T00:00:00Z</project.build.outputTimestamp>
 
   </properties>
 
-  <dependencies>
-
-    <!-- Nullability annotations -->
-    <dependency>
-      <groupId>org.jetbrains</groupId>
-      <artifactId>annotations</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- OSGi bundle and versioning annotations -->
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.annotation.bundle</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.annotation.versioning</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- OSGi DS and metatype annotations -->
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.service.component.annotations</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.service.metatype.annotations</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.sling</groupId>
-      <artifactId>org.apache.sling.servlets.annotations</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-  </dependencies>
-
   <dependencyManagement>
     <dependencies>
 
-      <!-- wcm.io -->
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
         <version>2.0.10</version>
       </dependency>
 
-      <!-- wcm.io Testing -->
       <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>5.6.10</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.sling</groupId>
-        <artifactId>org.apache.sling.testing.logging-mock</artifactId>
-        <version>2.0.0</version>
-      </dependency>
-
-      <!-- AEM dependencies -->
-      <dependency>
-        <groupId>io.wcm.maven</groupId>
-        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>6.5.17.0001</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <!-- Testing -->
-      <dependency>
-        <groupId>org.junit</groupId>
-        <artifactId>junit-bom</artifactId>
-        <version>5.13.1</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>${mockito.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-junit-jupiter</artifactId>
-        <version>${mockito.version}</version>
+        <groupId>com.adobe.cq</groupId>
+        <artifactId>core.wcm.components.all</artifactId>
+        <version>2.29.0</version>
+        <type>zip</type>
       </dependency>
 
     </dependencies>
   </dependencyManagement>
 
   <build>
-    <extensions>
-
-      <!-- Add wcm.io file header to code templates -->
-      <extension>
-        <groupId>io.wcm.maven</groupId>
-        <artifactId>io.wcm.maven.global-build-tools-mixin</artifactId>
-        <version>2</version>
-      </extension>
-
-    </extensions>
     <plugins>
 
       <!-- do not deploy this sample pom into maven repository -->
@@ -162,25 +72,6 @@
       </plugin>
 
     </plugins>
-    <pluginManagement>
-      <plugins>
-
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>license-maven-plugin</artifactId>
-          <configuration>
-            <licenseName>apache_v2</licenseName>
-            <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
-            <projectName>wcm.io</projectName>
-            <excludes>
-              <exclude>**/*.json</exclude>
-              <exclude>**/*.html</exclude>
-            </excludes>
-          </configuration>
-        </plugin>
-
-      </plugins>
-    </pluginManagement>
   </build>
 
   <profiles>

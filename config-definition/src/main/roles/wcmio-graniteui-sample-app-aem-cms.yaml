@@ -33,6 +33,11 @@ files:
         - rule: exclude
           pattern: /apps/wcmio-graniteui-sample-app/config/rewriter(/.*)?
 
+# Core Components (AEM 6.5)
+- url: mvn:com.adobe.cq/core.wcm.components.all//zip
+  dir: bundles
+  condition: ${app.aem65}
+
 # Application bundles and packages
 - url: mvn:io.wcm.samples/io.wcm.wcm.ui.granite.sample-app.core
   dir: bundles
@@ -61,6 +66,7 @@ config:
   app:
     confContent: true
     sampleContent: false
+    aem65: false
 
   # Log levels
   log:
