@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.wcm.maven</groupId>
+    <artifactId>io.wcm.maven.aem-global-parent</artifactId>
+    <version>2.1.34</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>io.wcm.samples</groupId>
+  <artifactId>io.wcm.wcm.ui.granite.sample-app.parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>wcmio-graniteui-sample-app Parent</name>
+
+  <properties>
+
+    <!-- Java version -->
+    <java.version>11</java.version>
+
+    <!-- AEM instance parameters -->
+    <sling.url>http://localhost:4502</sling.url>
+    <sling.publish.url>http://localhost:4503</sling.publish.url>
+
+    <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
+    <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
+
+    <!-- Versions -->
+    <mockito.version>5.18.0</mockito.version>
+
+    <!-- Enable reproducible builds -->
+    <project.build.outputTimestamp>2025-06-01T00:00:00Z</project.build.outputTimestamp>
+
+  </properties>
+
+  <dependencies>
+
+    <!-- Nullability annotations -->
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- OSGi bundle and versioning annotations -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.annotation.bundle</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.annotation.versioning</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- OSGi DS and metatype annotations -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.component.annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.metatype.annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.servlets.annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- wcm.io -->
+      <dependency>
+        <groupId>io.wcm.devops.conga.definitions</groupId>
+        <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
+        <version>2.0.10</version>
+      </dependency>
+
+      <!-- wcm.io Testing -->
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
+        <version>5.6.10</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>org.apache.sling.testing.logging-mock</artifactId>
+        <version>2.0.0</version>
+      </dependency>
+
+      <!-- AEM dependencies -->
+      <dependency>
+        <groupId>io.wcm.maven</groupId>
+        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
+        <version>6.5.17.0001</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Testing -->
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.13.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>${mockito.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <extensions>
+
+      <!-- Add wcm.io file header to code templates -->
+      <extension>
+        <groupId>io.wcm.maven</groupId>
+        <artifactId>io.wcm.maven.global-build-tools-mixin</artifactId>
+        <version>2</version>
+      </extension>
+
+    </extensions>
+    <plugins>
+
+      <!-- do not deploy this sample pom into maven repository -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <!-- Do not generate site -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+      </plugin>
+
+    </plugins>
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <configuration>
+            <licenseName>apache_v2</licenseName>
+            <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
+            <projectName>wcm.io</projectName>
+            <excludes>
+              <exclude>**/*.json</exclude>
+              <exclude>**/*.html</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+
+    <!-- Deployment to AEM 6.5 -->
+    <profile>
+      <id>aem65</id>
+      <properties>
+        <!-- AEM instance parameters -->
+        <sling.url>http://localhost:45025</sling.url>
+        <sling.publish.url>http://localhost:45035</sling.publish.url>
+      </properties>
+    </profile>
+
+    <!-- Profile gets active when building in Cloud Manager -->
+    <profile>
+      <id>cmBuild</id>
+      <activation>
+        <property>
+          <name>env.CM_BUILD</name>
+        </property>
+      </activation>
+
+      <!-- Define snapshot repositories for Cloud Manager environment -->
+      <repositories>
+        <repository>
+          <id>oss-snapshots</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>apache-snapshots</id>
+          <url>https://repository.apache.org/snapshots</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>oss-snapshots</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+          <id>apache-snapshots</id>
+          <url>https://repository.apache.org/snapshots</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+
+  </profiles>
+
+</project>

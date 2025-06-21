@@ -1,0 +1,67 @@
+# Project-specific AEM configuration
+
+# Inherit default AEM functionality from "AEM Definitions", see http://devops.wcm.io/conga/definitions/aem/
+inherits:
+- role: aem-cms
+
+variants:
+- variant: aem-author
+- variant: aem-publish
+
+templateDir: wcmio-graniteui-sample-app-aem-cms
+
+files:
+
+
+# AEM OSGi System Configuration
+- file: wcmio-graniteui-sample-app-aem-cms-config.osgiconfig.json
+  dir: packages
+  template: wcmio-graniteui-sample-app-aem-cms-config.osgiconfig.json.hbs
+  validators:
+  - none  # allow trailing commas in JSON picked up by post processor
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: wcmio-graniteui-sample-app-aem-cms-config
+      rootPath: /apps/wcmio-graniteui-sample-app/config
+      filters:
+      - filter: /apps/wcmio-graniteui-sample-app
+        rules:
+        - rule: include
+          pattern: /apps/wcmio-graniteui-sample-app/config(\..*)?(/.*)?
+        - rule: exclude
+          pattern: /apps/wcmio-graniteui-sample-app/config/rewriter(/.*)?
+
+# Application bundles and packages
+- url: mvn:io.wcm.samples/io.wcm.wcm.ui.granite.sample-app.core
+  dir: bundles
+
+# Application conf content package
+- url: mvn:io.wcm.samples/io.wcm.wcm.ui.granite.sample-app.conf-content//zip
+  dir: packages
+  condition: ${app.confContent}
+
+# Application sample content package
+- url: mvn:io.wcm.samples/io.wcm.wcm.ui.granite.sample-app.sample-content//zip
+  dir: packages
+  condition: ${app.sampleContent}
+
+
+# Defines configuration parameters and default values
+config:
+  contentPackage:
+    group: wcm-io-samples
+    version: ${version}
+
+  aem:
+    # Disable user tracking in author environment
+    disableAuthorUsageStatisticsCollection: false
+
+  app:
+    confContent: true
+    sampleContent: false
+
+  # Log levels
+  log:
+    projectSpecificLogLevel: warn

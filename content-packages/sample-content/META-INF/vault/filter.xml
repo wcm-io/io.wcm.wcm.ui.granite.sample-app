@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/content/dam/wcmio-graniteui-sample-app">
+        <!-- Exclude folder thumbnails - they will be generated automatically -->
+        <exclude pattern="^.*/jcr:content/folderThumbnail(/.*)?$"/>
+    </filter>
+    <filter root="/content/wcmio-graniteui-sample-app"/>
+    <filter root="/content/experience-fragments/wcmio-graniteui-sample-app"/>
+</workspaceFilter>

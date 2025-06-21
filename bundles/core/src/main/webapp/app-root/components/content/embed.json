@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Embed",
+  "componentGroup": "wcmio-graniteui-sample-app Content",
+  "sling:resourceSuperType": "core/wcm/components/embed/v2/embed"
+}

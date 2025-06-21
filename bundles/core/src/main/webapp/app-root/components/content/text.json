@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Text",
+  "componentGroup": "wcmio-graniteui-sample-app Content",
+  "sling:resourceSuperType": "core/wcm/components/text/v2/text"
+}

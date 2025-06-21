@@ -1,0 +1,7 @@
+{
+  "jcr:primaryType": "cq:ClientLibraryFolder",
+  "categories": [
+    "wcmio-graniteui-sample-app.3rdparty"
+  ],
+  "allowProxy": true
+}

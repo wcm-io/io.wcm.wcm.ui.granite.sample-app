@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Navigation",
+  "componentGroup": "wcmio-graniteui-sample-app Templating",
+  "sling:resourceSuperType": "core/wcm/components/navigation/v2/navigation"
+}

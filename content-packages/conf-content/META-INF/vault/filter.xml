@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/wcmio-graniteui-sample-app">
+        <include pattern="/conf/wcmio-graniteui-sample-app"/>
+        <include pattern="/conf/wcmio-graniteui-sample-app/rep:policy(/.*)?"/>
+    </filter>
+    <filter root="/conf/wcmio-graniteui-sample-app/settings/wcm">
+        <exclude pattern="^.*/dam:thumbnails(/.*)?$"/>
+    </filter>
+</workspaceFilter>
