@@ -50,6 +50,27 @@
               "fieldDescription": "This is only visible when the checkbox is checked."
             },
 
+            "mytextareaToggle": {
+              "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
+              "name": "./mytextareaToggle",
+              "text": "Show/Hide Text Area",
+              "granite:class": "wcmio-dialog-showhide",
+              "granite:data": {
+                "wcmio-dialog-showhide-target": ".mytextarea-toggle"
+              }
+            },
+            "mytextarea": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/form/textarea",
+              "granite:class": "mytextarea-toggle",
+              "granite:data": {
+                "showhidetargetvalue": "true"
+              },
+              "name": "./mytextarea",
+              "required": true,
+              "fieldLabel": "Text Area",
+              "fieldDescription": "This is only visible when the checkbox is checked."
+            },
+
             "mytextToggle": {
               "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
               "name": "./mytextfieldToggle",
