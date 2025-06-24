@@ -24,7 +24,7 @@
               "items": {
                 "text": {
                   "sling:resourceType": "granite/ui/components/coral/foundation/text",
-                  "text": "Test Case: Select options showing/hiding components"
+                  "text": "Test Case: Select options showing/hiding components with multiple values attached to targets."
                 }
               }
             },

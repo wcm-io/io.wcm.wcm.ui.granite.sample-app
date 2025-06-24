@@ -26,6 +26,11 @@ Deploy to local AEM 6.5 instance:
 * `build-deploy_aem65.sh` -> deploy to author on port 45025
 * `build-deploy-publish_aem65.sh` -> deploy to publish on port 45035
 
+Deploy to local AEM 6.6 (AEM 6.5 LTS) instance:
+
+* `build-deploy_aem66.sh` -> deploy to author on port 45026
+* `build-deploy-publish_aem66.sh` -> deploy to publish on port 45036
+
 
 Authoring Sample Pages
 ----------------------
@@ -37,5 +42,5 @@ Open the authoring sample pages at<br/>
 System requirements
 -------------------
 
-* AEM 6.5.17+ or AEMaaCS SDK
+* AEM 6.5.17+, AEM 6.6 or AEMaaCS SDK
 * Java 11
