@@ -21,6 +21,9 @@
                 <showhide_checkbox
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-checkbox"/>
+                <showhide_select
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-select"/>
             </content>
         </root>
     </jcr:content>
