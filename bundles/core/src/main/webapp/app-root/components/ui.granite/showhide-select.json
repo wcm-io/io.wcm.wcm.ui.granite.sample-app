@@ -2,7 +2,7 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Show/Hide Select",
   "componentGroup": "wcmio-graniteui-sample-app Granite UI",
-  "sling:resourceSuperType": "/apps/wcmio-graniteui-sample-app/core/components/global/component",
+  "sling:resourceSuperType": "wcmio-graniteui-sample-app/core/components/global/component",
 
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig"
@@ -19,10 +19,20 @@
           "sling:resourceType": "granite/ui/components/coral/foundation/container",
           "items": {
 
+            "intro": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "items": {
+                "text": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/text",
+                  "text": "Test Case: Select options showing/hiding components"
+                }
+              }
+            },
+
             "myselect": {
               "sling:resourceType": "granite/ui/components/coral/foundation/form/select",
               "name": "./myselect",
-              "text": "Example Select",
+              "fieldLabel": "Example Select",
               "granite:class": "wcmio-dialog-showhide",
               "granite:data": {
                 "wcmio-dialog-showhide-target": ".myselect-target"
@@ -53,7 +63,7 @@
               "items": {
                 "mytextfield1a": {
                   "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
-                  "name": "./mytextfielda1",
+                  "name": "./mytextfield1a",
                   "required": true,
                   "fieldLabel": "Example textfield 1a",
                   "fieldDescription": "Visible for Option 1."
@@ -61,7 +71,6 @@
                 "mytextfield1b": {
                   "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
                   "name": "./mytextfield1b",
-                  "required": true,
                   "fieldLabel": "Example textfield 1b",
                   "fieldDescription": "Visible for Option 1."
                 }
