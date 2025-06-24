@@ -1,0 +1,53 @@
+{
+  "configurations": {
+
+    // Set loglevel for project-specific bundles
+    "org.apache.sling.commons.log.LogManager.factory.config-wcmio-graniteui-sample-app": {
+      "org.apache.sling.commons.log.level": "{{app.logLevel}}",
+      "org.apache.sling.commons.log.names": ["io.wcm","io.wcm.wcm.ui.granite.sampleapp"]
+    },
+
+    // Disable built-in AEM link checker by default (enable it only when configured properly).
+    "com.day.cq.rewriter.linkchecker.impl.LinkCheckerTransformerFactory": {
+      "linkcheckertransformer.disableChecking": true
+    },
+
+  },
+
+  "configurations:author": {
+
+    // Show "Sites" view in TouchUI after login
+    "com.day.cq.commons.servlets.RootMappingServlet": {
+      "rootmapping.target": "/sites.html"
+    },
+
+{{#if aem.disableAuthorUsageStatisticsCollection ~}}
+    // Disable usage tracking by default for admins (esp. for local usage)
+    "com.adobe.cq.experiencelog.impl.ExperienceLogConfigServlet": {
+      "enabled": false
+    },
+
+{{/if ~}}
+  },
+
+  "configurations:publish": {
+
+    // Disable default renderings for Sling GET servlet on publish
+    "org.apache.sling.servlets.get.DefaultGetServlet": {
+      "enable.html": "false",
+      "enable.json": "true",
+      "enable.txt": "false",
+      "enable.xml": "false",
+      "index": "false",
+      "index.files": ["index","index.html"],
+      "aliases": "xml:pdf",
+      "json.maximumresults": 100
+    },
+
+  },
+
+  "repoinit": [
+    // Create root folder below /apps for application
+    "create path /apps/wcmio-graniteui-sample-app(sling:Folder)"
+  ]
+}

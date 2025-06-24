@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Quick Search",
+  "componentGroup": "wcmio-graniteui-sample-app Templating",
+  "sling:resourceSuperType": "core/wcm/components/search/v1/search"
+}

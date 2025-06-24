@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.wcm.samples</groupId>
+    <artifactId>io.wcm.wcm.ui.granite.sample-app.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../parent/pom.xml</relativePath>
+  </parent>
+
+  <groupId>io.wcm.samples</groupId>
+  <artifactId>io.wcm.wcm.ui.granite.sample-app.core</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>wcmio-graniteui-sample-app Core</name>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>bnd-maven-plugin</artifactId>
+        <configuration>
+          <bnd>
+            Sling-Initial-Content: \
+              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/wcmio-graniteui-sample-app/clientlibs,\
+              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/wcmio-graniteui-sample-app/core,\
+              SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/wcmio-graniteui-sample-app/core/i18n
+
+            Sling-Namespaces: \
+              wcmio=http://wcm.io/ns,\
+              cq=http://www.day.com/jcr/cq/1.0,\
+              granite=http://www.adobe.com/jcr/granite/1.0,\
+              sling=http://sling.apache.org/jcr/sling/1.0
+          </bnd>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

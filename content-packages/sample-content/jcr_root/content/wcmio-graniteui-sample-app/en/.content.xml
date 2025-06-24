@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastReplicated="{Date}2025-06-21T00:00:00.000+02:00"
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/wcmio-graniteui-sample-app/settings/wcm/templates/contentpage"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="en"
+        sling:resourceType="wcmio-graniteui-sample-app/core/components/global/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcmio-graniteui-sample-app/core/components/container/container">
+            <title
+                jcr:primaryType="nt:unstructured"
+                jcr:title="WCM Granite UI Extensions Sample Application"
+                sling:resourceType="wcmio-graniteui-sample-app/core/components/content/title"
+                linkTarget="_self"
+                type="h1"/>
+            <content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcmio-graniteui-sample-app/core/components/container/container">
+                <list
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcmio-graniteui-sample-app/core/components/content/list"
+                    childDepth="1"
+                    displayItemAsTeaser="false"
+                    linkItems="true"
+                    listFrom="children"
+                    parentPage="/content/wcmio-graniteui-sample-app/en"
+                    showDescription="false"
+                    showModificationDate="false"
+                    sortOrder="asc"
+                    tagsMatch="any"/>
+            </content>
+        </root>
+    </jcr:content>
+    <showhide/>
+</jcr:root>

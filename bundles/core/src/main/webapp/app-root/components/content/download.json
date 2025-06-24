@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Download",
+  "componentGroup": "wcmio-graniteui-sample-app Content",
+  "sling:resourceSuperType": "core/wcm/components/download/v2/download"
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.wcm.maven</groupId>
+    <artifactId>io.wcm.maven.aem-global-parent</artifactId>
+    <version>2.1.34</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>io.wcm.samples</groupId>
+  <artifactId>io.wcm.wcm.ui.granite.sample-app.parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>wcmio-graniteui-sample-app Parent</name>
+
+  <properties>
+
+    <!-- Java version -->
+    <java.version>11</java.version>
+
+    <!-- AEM instance parameters -->
+    <sling.url>http://localhost:4502</sling.url>
+    <sling.publish.url>http://localhost:4503</sling.publish.url>
+
+    <!-- Enable reproducible builds -->
+    <project.build.outputTimestamp>2025-06-01T00:00:00Z</project.build.outputTimestamp>
+
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.granite</artifactId>
+        <version>1.10.7-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.wcm.devops.conga.definitions</groupId>
+        <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
+        <version>2.0.10</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.adobe.cq</groupId>
+        <artifactId>core.wcm.components.all</artifactId>
+        <version>2.29.0</version>
+        <type>zip</type>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+
+      <!-- do not deploy this sample pom into maven repository -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <!-- Do not generate site -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <profiles>
+
+    <!-- Deployment to AEM 6.5 -->
+    <profile>
+      <id>aem65</id>
+      <properties>
+        <!-- AEM instance parameters -->
+        <sling.url>http://localhost:45025</sling.url>
+        <sling.publish.url>http://localhost:45035</sling.publish.url>
+      </properties>
+    </profile>
+
+    <!-- Deployment to AEM 6.6 -->
+    <profile>
+      <id>aem66</id>
+      <properties>
+        <!-- AEM instance parameters -->
+        <sling.url>http://localhost:45026</sling.url>
+        <sling.publish.url>http://localhost:45036</sling.publish.url>
+      </properties>
+    </profile>
+
+    <!-- Profile gets active when building in Cloud Manager -->
+    <profile>
+      <id>cmBuild</id>
+      <activation>
+        <property>
+          <name>env.CM_BUILD</name>
+        </property>
+      </activation>
+
+      <!-- Define snapshot repositories for Cloud Manager environment -->
+      <repositories>
+        <repository>
+          <id>oss-snapshots</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>apache-snapshots</id>
+          <url>https://repository.apache.org/snapshots</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>oss-snapshots</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+          <id>apache-snapshots</id>
+          <url>https://repository.apache.org/snapshots</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+
+  </profiles>
+
+</project>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastReplicated="{Date}2025-06-21T00:00:00.000+02:00"
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/wcmio-graniteui-sample-app/settings/wcm/templates/contentpage"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Granite UI Show/Hide"
+        sling:resourceType="wcmio-graniteui-sample-app/core/components/global/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcmio-graniteui-sample-app/core/components/container/container">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcmio-graniteui-sample-app/core/components/content/title"/>
+            <content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcmio-graniteui-sample-app/core/components/container/container">
+                <showhide_checkbox
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-checkbox"/>
+                <showhide_select
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-select"/>
+                <showhide_select_multiple
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-select-multiple"/>
+                <showhide_select_multivalues
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-select-multivalue"/>
+            </content>
+        </root>
+    </jcr:content>
+</jcr:root>
