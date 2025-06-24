@@ -26,8 +26,7 @@
           <bnd>
             Sling-Initial-Content: \
               SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/wcmio-graniteui-sample-app/clientlibs,\
-              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/wcmio-graniteui-sample-app/core,\
-              SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/wcmio-graniteui-sample-app/core/i18n
+              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/wcmio-graniteui-sample-app/core
 
             Sling-Namespaces: \
               wcmio=http://wcm.io/ns,\
