@@ -1,0 +1,49 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Show/Hide Checkbox",
+  "componentGroup": "wcmio-graniteui-sample-app Granite UI",
+  "sling:resourceSuperType": "/apps/wcmio-graniteui-sample-app/core/components/global/component",
+
+  "cq:editConfig": {
+    "jcr:primaryType": "cq:EditConfig"
+  },
+
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "jcr:title": "Show/Hide Checkbox",
+    "content": {
+      "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
+      "items": {
+        "column": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/container",
+          "items": {
+
+            "mycheckbox": {
+              "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
+              "name": "./mycheckbox",
+              "text": "Example Checkbox",
+              "granite:class": "wcmio-dialog-showhide",
+              "granite:data": {
+                "wcmio-dialog-showhide-target": ".mycheckbox-target"
+              }
+            },
+            "mytextfield": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+              "granite:class": "mycheckbox-target",
+              "granite:data": {
+                "showhidetargetvalue": "true"
+              },
+              "name": "./mytextfield",
+              "required": true,
+              "fieldLabel": "Example textfield",
+              "fieldDescription": "This is only visible when the checkbox is checked."
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}

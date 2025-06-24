@@ -8,6 +8,9 @@
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcmio-graniteui-sample-app/core/components/container/container">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcmio-graniteui-sample-app/core/components/content/title"/>
             <content
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcmio-graniteui-sample-app/core/components/container/container"/>

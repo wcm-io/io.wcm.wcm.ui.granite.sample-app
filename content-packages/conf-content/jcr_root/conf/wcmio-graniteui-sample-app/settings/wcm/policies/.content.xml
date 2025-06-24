@@ -12,7 +12,8 @@
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Root Container"
                             sling:resourceType="wcm/core/components/policy/policy"
-                            components="[/apps/wcmio-graniteui-sample-app/core/components/container/container,group:wcmio-graniteui-sample-app Templating]">
+                            components="[/apps/wcmio-graniteui-sample-app/core/components/container/container,/apps/wcmio-graniteui-sample-app/core/components/content/title,group:wcmio-graniteui-sample-app Templating]"
+                            layoutDisabled="false">
                             <jcr:content
                                 cq:lastReplicated="{Date}2025-06-21T00:00:00.000+02:00"
                                 cq:lastReplicationAction="Activate"
@@ -44,7 +45,8 @@
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Content Container"
                             sling:resourceType="wcm/core/components/policy/policy"
-                            components="[group:wcmio-graniteui-sample-app Container,group:wcmio-graniteui-sample-app Content]">
+                            components="[/apps/wcmio-graniteui-sample-app/core/components/container/container,/apps/wcmio-graniteui-sample-app/core/components/content/list,/apps/wcmio-graniteui-sample-app/core/components/content/title,group:wcmio-graniteui-sample-app Granite UI]"
+                            layoutDisabled="false">
                             <jcr:content
                                 cq:lastReplicated="{Date}2025-06-21T00:00:00.000+02:00"
                                 cq:lastReplicationAction="Activate"
