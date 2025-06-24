@@ -11,14 +11,31 @@ Continuous Integration: https://github.com/wcm-io/io.wcm.wcm.ui.granite.sample-a
 Commercial support: https://wcm.io/commercial-support.html
 
 
-## Build from sources
+Deploy sample project
+---------------------
 
-If you want to build wcm.io from sources make sure you have configured all [Maven Repositories](https://wcm.io/maven.html) in your settings.xml.
+You can use this scripts for a full deployment into local AEM instances.
 
-See [Maven Settings](https://github.com/wcm-io/io.wcm.wcm.ui.granite.sample-app/blob/develop/.maven-settings.xml) for an example with a full configuration.
+Deploy to local AEMaaCS SDK instance:
 
-Then you can build using
+* `build-deploy.sh` -> deploy to author on port 4502
+* `build-deploy-publish.sh` -> deploy to publish on port 4503
 
-```
-mvn clean install
-```
+Deploy to local AEM 6.5 instance:
+
+* `build-deploy_aem65.sh` -> deploy to author on port 45025
+* `build-deploy-publish_aem65.sh` -> deploy to publish on port 45035
+
+
+Authoring Sample Pages
+----------------------
+
+Open the authoring sample pages at<br/>
+[http://localhost:4502/content/contextaware-config-sample/en/config.html](http://localhost:4502/editor.html/content/wcmio-graniteui-sample-app/en.html)
+
+
+System requirements
+-------------------
+
+* AEM 6.5.17+ or AEMaaCS SDK
+* Java 11
