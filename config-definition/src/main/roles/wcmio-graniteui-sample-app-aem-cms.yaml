@@ -39,6 +39,8 @@ files:
   condition: ${app.aem65}
 
 # Application bundles and packages
+- url: mvn:io.wcm/io.wcm.wcm.ui.granite
+  dir: bundles
 - url: mvn:io.wcm.samples/io.wcm.wcm.ui.granite.sample-app.core
   dir: bundles
 
