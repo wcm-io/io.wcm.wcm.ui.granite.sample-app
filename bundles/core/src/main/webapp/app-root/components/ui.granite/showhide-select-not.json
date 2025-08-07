@@ -1,0 +1,133 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Show/Hide Select (showhidetargetnot)",
+  "componentGroup": "wcmio-graniteui-sample-app Granite UI",
+  "sling:resourceSuperType": "wcmio-graniteui-sample-app/core/components/global/component",
+
+  "cq:editConfig": {
+    "jcr:primaryType": "cq:EditConfig"
+  },
+
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "jcr:title": "Show/Hide Select (showhidetargetnot)",
+    "content": {
+      "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
+      "items": {
+        "column": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/container",
+          "items": {
+
+            "intro": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "items": {
+                "text": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/text",
+                  "text": "Test Case: Select options showing/hiding components with negation (showhidetargetnot)."
+                }
+              }
+            },
+
+            "myselect": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/form/select",
+              "name": "./myselect",
+              "fieldLabel": "Example Select",
+              "granite:class": "wcmio-dialog-showhide",
+              "granite:data": {
+                "wcmio-dialog-showhide-target": ".myselect-target"
+              },
+              "items": {
+                "option1": {
+                  "value": "option1",
+                  "text": "Option 1",
+                  "selected": true
+                },
+                "option2": {
+                  "value": "option2",
+                  "text": "Option 2"
+                },
+                "option3": {
+                  "value": "option3",
+                  "text": "Option 3"
+                }
+              }
+            },
+
+            "well1": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "granite:class": "myselect-target",
+              "granite:data": {
+                "showhidetargetvalue": "option1",
+                "showhidetargetnot": true
+              },
+              "items": {
+                "mytextfield1a": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                  "name": "./mytextfield1a",
+                  "required": true,
+                  "fieldLabel": "Example textfield 1a",
+                  "fieldDescription": "Visible for Option 1."
+                },
+                "mytextfield1b": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                  "name": "./mytextfield1b",
+                  "fieldLabel": "Example textfield 1b",
+                  "fieldDescription": "Visible for Option 1."
+                }
+              }
+            },
+
+            "well2": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "granite:class": "myselect-target",
+              "granite:data": {
+                "showhidetargetvalue": "option2",
+                "showhidetargetnot": true
+              },
+              "items": {
+                "mytextfield2": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                  "name": "./mytextfield2",
+                  "required": true,
+                  "fieldLabel": "Example textfield 2",
+                  "fieldDescription": "Visible for Option 2."
+                }
+              }
+            },
+
+            "well3": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "granite:class": "myselect-target",
+              "granite:data": {
+                "showhidetargetvalue": "option3",
+                "showhidetargetnot": true
+              },
+              "items": {
+                "mytextfield3": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                  "name": "./mytextfield3",
+                  "required": true,
+                  "fieldLabel": "Example textfield 3",
+                  "fieldDescription": "Visible for Option 3."
+                },
+                "mycheckbox": {
+                  "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
+                  "granite:class": "mycheckbox-toggle",
+                  "granite:data": {
+                    "showhidetargetvalue": "true"
+                  },
+                  "name": "./mycheckbox3",
+                  "text": "Checkbox 3",
+                  "fieldDescription": "Visible for Option 3."
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}
