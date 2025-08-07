@@ -33,6 +33,9 @@
                 <showhide_select_not
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-select-not"/>
+                <showhide_select_tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-select-tabs-panels"/>
                 <showhide_radio
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-radio"/>
