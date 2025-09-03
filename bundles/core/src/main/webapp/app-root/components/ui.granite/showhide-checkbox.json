@@ -122,12 +122,15 @@
               "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
               "granite:class": "mypathfield-toggle",
               "granite:data": {
-                "showhidetargetvalue": "true"
+                "showhidetargetvalue": "true",
+                "wcmio-pattern": "^/content/",
+                "wcmio-patternmessage": "Path has to start with /content/."
               },
               "name": "./mypathfield",
               "required": true,
-              "fieldLabel": "Pathfield",
-              "fieldDescription": "This is only visible when the checkbox is checked."
+              "fieldLabel": "Pathfield (with validation)",
+              "fieldDescription": "This is only visible when the checkbox is checked.",
+              "validation": ["wcmio.pattern"]
             }
 
           }
