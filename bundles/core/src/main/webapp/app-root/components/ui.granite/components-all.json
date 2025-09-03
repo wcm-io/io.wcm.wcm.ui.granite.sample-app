@@ -53,7 +53,15 @@
             "mypath": {
               "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/pathfield",
               "name": "./mypath",
-              "rootPath": "/content"
+              "rootPath": "/content",
+              "fieldLabel": "Content Path"
+            },
+
+            "mydampath": {
+              "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/pathfield",
+              "name": "./mydampath",
+              "rootPath": "/content/dam",
+              "fieldLabel": "DAM Path"
             }
 
           }
