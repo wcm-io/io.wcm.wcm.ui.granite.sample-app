@@ -11,7 +11,7 @@
   "cq:dialog": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "cq/gui/components/authoring/dialog",
-    "jcr:title": "Show/Hide Select",
+    "jcr:title": "Show/Hide Link Handler Link Ref Container",
     "content": {
       "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
       "items": {
