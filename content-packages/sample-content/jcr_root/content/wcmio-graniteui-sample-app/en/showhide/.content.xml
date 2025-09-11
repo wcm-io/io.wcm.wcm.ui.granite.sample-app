@@ -39,6 +39,9 @@
                 <showhide_radio
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-radio"/>
+                <showhide_link_select
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcmio-graniteui-sample-app/core/components/ui.granite/showhide-link-select"/>
             </content>
         </root>
     </jcr:content>
