@@ -1,6 +1,6 @@
 {
   "jcr:primaryType": "cq:Component",
-  "jcr:title": "Show/Hide Link Select",
+  "jcr:title": "Show/Hide Link Handler Link Ref Container",
   "componentGroup": "wcmio-graniteui-sample-app Granite UI",
   "sling:resourceSuperType": "wcmio-graniteui-sample-app/core/components/global/component",
 
