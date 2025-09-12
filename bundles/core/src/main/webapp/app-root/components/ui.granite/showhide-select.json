@@ -84,11 +84,11 @@
                 "showhidetargetvalue": "option2"
               },
               "items": {
-                "mytextfield2": {
-                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
-                  "name": "./mytextfield2",
+                "mypathfield": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
+                  "name": "./mypathfield",
                   "required": true,
-                  "fieldLabel": "Example textfield 2",
+                  "fieldLabel": "Example path field",
                   "fieldDescription": "Visible for Option 2."
                 }
               }
