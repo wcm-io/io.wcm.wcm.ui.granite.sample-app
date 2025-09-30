@@ -18,15 +18,74 @@
         "column": {
           "sling:resourceType": "granite/ui/components/coral/foundation/container",
           "items": {
-            "linkRef": {
-              "sling:resourceType": "wcm-io/handler/link/components/granite/form/linkRefContainer",
-              "showLinkTitle": true,
-              "required": true
+            "intro": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "items": {
+                "text": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/text",
+                  "text": "Test Case: Select options showing/hiding components where link ref container is used"
+                }
+              }
+            },
+            "myselect": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/form/select",
+              "name": "./myselect",
+              "fieldLabel": "Example Select",
+              "granite:class": "wcmio-dialog-showhide",
+              "granite:data": {
+                "wcmio-dialog-showhide-target": ".myselect-target"
+              },
+              "items": {
+                "option1": {
+                  "value": "option1",
+                  "text": "Text Field",
+                  "selected": true
+                },
+                "option2": {
+                  "value": "option2",
+                  "text": "Link Ref Container"
+                }
+              }
+            },
+            "well1": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "granite:class": "myselect-target",
+              "granite:data": {
+                "showhidetargetvalue": "option1"
+              },
+              "items": {
+                "mytextfield1a": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                  "name": "./mytextfield1a",
+                  "required": true,
+                  "fieldLabel": "Example textfield 1a",
+                  "fieldDescription": "Visible for Option 1."
+                },
+                "mytextfield1b": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                  "name": "./mytextfield1b",
+                  "fieldLabel": "Example textfield 1b",
+                  "fieldDescription": "Visible for Option 1."
+                }
+              }
+            },
+            "well2": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "granite:class": "myselect-target",
+              "granite:data": {
+                "showhidetargetvalue": "option2"
+              },
+              "items": {
+                "linkRef": {
+                  "sling:resourceType": "wcm-io/handler/link/components/granite/form/linkRefContainer",
+                  "showLinkTitle": true,
+                  "required": true
+                }
+              }
             }
           }
         }
       }
     }
   }
-
 }
