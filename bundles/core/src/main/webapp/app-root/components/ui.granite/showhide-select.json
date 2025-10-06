@@ -73,6 +73,11 @@
                   "name": "./mytextfield1b",
                   "fieldLabel": "Example textfield 1b",
                   "fieldDescription": "Visible for Option 1."
+                },
+                "myhiddenfield": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                  "name": "./myhiddenfield",
+                  "value": "option1"
                 }
               }
             },
@@ -90,6 +95,11 @@
                   "required": true,
                   "fieldLabel": "Example path field",
                   "fieldDescription": "Visible for Option 2."
+                },
+                "myhiddenfield": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                  "name": "./myhiddenfield",
+                  "value": "option2"
                 }
               }
             },
@@ -117,6 +127,11 @@
                   "name": "./mycheckbox3",
                   "text": "Checkbox 3",
                   "fieldDescription": "Visible for Option 3."
+                },
+                "myhiddenfield": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                  "name": "./myhiddenfield",
+                  "value": "option3"
                 }
               }
             }
