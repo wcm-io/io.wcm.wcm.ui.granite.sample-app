@@ -76,6 +76,7 @@
                 },
                 "myhiddenfield": {
                   "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                  "ignoreData": true,
                   "name": "./myhiddenfield",
                   "value": "option1"
                 }
@@ -98,6 +99,7 @@
                 },
                 "myhiddenfield": {
                   "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                  "ignoreData": true,
                   "name": "./myhiddenfield",
                   "value": "option2"
                 }
@@ -130,6 +132,7 @@
                 },
                 "myhiddenfield": {
                   "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                  "ignoreData": true,
                   "name": "./myhiddenfield",
                   "value": "option3"
                 }
