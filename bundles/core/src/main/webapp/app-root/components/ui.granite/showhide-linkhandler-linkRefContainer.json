@@ -18,6 +18,17 @@
         "column": {
           "sling:resourceType": "granite/ui/components/coral/foundation/container",
           "items": {
+
+            "intro": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "items": {
+                "text": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/text",
+                  "text": "Test Case: Link ref container which uses show/hide internally."
+                }
+              }
+            },
+
             "linkRef": {
               "sling:resourceType": "wcm-io/handler/link/components/granite/form/linkRefContainer",
               "showLinkTitle": true,
@@ -28,5 +39,4 @@
       }
     }
   }
-
 }
