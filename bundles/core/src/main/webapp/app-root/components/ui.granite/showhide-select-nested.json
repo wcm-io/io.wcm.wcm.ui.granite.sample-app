@@ -100,7 +100,7 @@
                       "fieldLabel": "Example Nested Select",
                       "granite:class": "wcmio-dialog-showhide",
                       "granite:data": {
-                        "wcmio-dialog-showhide-target": ".myselect-target",
+                        "wcmio-dialog-showhide-target": ".mysubselect-target",
                         "wcmio-dialog-showhide-parent": ".nested-select-parent"
                       },
                       "items": {
@@ -121,7 +121,7 @@
                     },
                     "subwell1": {
                       "sling:resourceType": "granite/ui/components/coral/foundation/well",
-                      "granite:class": "myselect-target",
+                      "granite:class": "mysubselect-target",
                       "granite:data": {
                         "showhidetargetvalue": "suboption1"
                       },
@@ -149,7 +149,7 @@
                     },
                     "subwell2": {
                       "sling:resourceType": "granite/ui/components/coral/foundation/well",
-                      "granite:class": "myselect-target",
+                      "granite:class": "mysubselect-target",
                       "granite:data": {
                         "showhidetargetvalue": "suboption2"
                       },
@@ -171,7 +171,7 @@
                     },
                     "subwell3": {
                       "sling:resourceType": "granite/ui/components/coral/foundation/well",
-                      "granite:class": "myselect-target",
+                      "granite:class": "mysubselect-target",
                       "granite:data": {
                         "showhidetargetvalue": "suboption3"
                       },
