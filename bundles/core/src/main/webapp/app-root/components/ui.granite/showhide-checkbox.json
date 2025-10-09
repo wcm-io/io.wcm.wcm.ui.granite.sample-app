@@ -131,6 +131,134 @@
               "fieldLabel": "Pathfield (with validation)",
               "fieldDescription": "This is only visible when the checkbox is checked.",
               "validation": ["wcmio.pattern"]
+            },
+
+            "mynestedselectToggle": {
+              "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
+              "name": "./mynestedselectToggle",
+              "text": "Show/Hide Nested Select",
+              "granite:class": "wcmio-dialog-showhide",
+              "granite:data": {
+                "wcmio-dialog-showhide-target": ".mynestedselect-toggle"
+              }
+            },
+            "nestedselect": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/well",
+              "granite:class": "mynestedselect-toggle",
+              "granite:data": {
+                "showhidetargetvalue": "true"
+              },
+              "items": {
+                "nestedcontainer": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/container",
+                  "granite:class": "nested-select-parent",
+                  "items": {
+                    "mysubselect": {
+                      "sling:resourceType": "granite/ui/components/coral/foundation/form/select",
+                      "name": "./mysubselect",
+                      "fieldLabel": "Example Nested Select",
+                      "granite:class": "wcmio-dialog-showhide",
+                      "granite:data": {
+                        "wcmio-dialog-showhide-target": ".mysubselect-target",
+                        "wcmio-dialog-showhide-parent": ".nested-select-parent"
+                      },
+                      "items": {
+                        "suboption1": {
+                          "value": "suboption1",
+                          "text": "Sub Option 1",
+                          "selected": true
+                        },
+                        "suboption2": {
+                          "value": "suboption2",
+                          "text": "Sub Option 2"
+                        },
+                        "suboption3": {
+                          "value": "suboption3",
+                          "text": "Sub Option 3"
+                        }
+                      }
+                    },
+                    "subwell1": {
+                      "sling:resourceType": "granite/ui/components/coral/foundation/well",
+                      "granite:class": "mysubselect-target",
+                      "granite:data": {
+                        "showhidetargetvalue": "suboption1"
+                      },
+                      "items": {
+                        "mysubtextfield1a": {
+                          "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                          "name": "./mysubtextfield1a",
+                          "required": true,
+                          "fieldLabel": "Sub Example textfield 1a",
+                          "fieldDescription": "Visible for Option 1."
+                        },
+                        "mysubtextfield1b": {
+                          "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                          "name": "./mysubtextfield1b",
+                          "fieldLabel": "Sub Example textfield 1b",
+                          "fieldDescription": "Visible for Option 1."
+                        },
+                        "mysubhiddenfield": {
+                          "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                          "ignoreData": true,
+                          "name": "./myhiddenfield",
+                          "value": "option1"
+                        }
+                      }
+                    },
+                    "subwell2": {
+                      "sling:resourceType": "granite/ui/components/coral/foundation/well",
+                      "granite:class": "mysubselect-target",
+                      "granite:data": {
+                        "showhidetargetvalue": "suboption2"
+                      },
+                      "items": {
+                        "mysubpathfield": {
+                          "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
+                          "name": "./mysubpathfield",
+                          "required": true,
+                          "fieldLabel": "Sub Example path field",
+                          "fieldDescription": "Visible for Option 2."
+                        },
+                        "mysubhiddenfield": {
+                          "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                          "ignoreData": true,
+                          "name": "./mysubhiddenfield",
+                          "value": "option2"
+                        }
+                      }
+                    },
+                    "subwell3": {
+                      "sling:resourceType": "granite/ui/components/coral/foundation/well",
+                      "granite:class": "mysubselect-target",
+                      "granite:data": {
+                        "showhidetargetvalue": "suboption3"
+                      },
+                      "items": {
+                        "mysubtextfield3": {
+                          "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                          "name": "./mysubtextfield3",
+                          "required": true,
+                          "fieldLabel": "Sub Example textfield 3",
+                          "fieldDescription": "Visible for Option 3."
+                        },
+                        "mysubcheckbox": {
+                          "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
+                          "name": "./mysubcheckbox3",
+                          "text": "Sub Checkbox 3",
+                          "fieldDescription": "Visible for Option 3."
+                        },
+                        "mysubhiddenfield": {
+                          "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                          "ignoreData": true,
+                          "name": "./mysubhiddenfield",
+                          "value": "option3"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
 
           }
