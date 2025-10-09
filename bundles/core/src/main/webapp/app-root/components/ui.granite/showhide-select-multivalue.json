@@ -122,10 +122,6 @@
                 },
                 "mycheckbox": {
                   "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
-                  "granite:class": "mycheckbox-toggle",
-                  "granite:data": {
-                    "showhidetargetvalue": "true"
-                  },
                   "name": "./mycheckbox3",
                   "text": "Checkbox 3",
                   "fieldDescription": "Visible for Option 6."
