@@ -73,7 +73,7 @@
 
             "mytextToggle": {
               "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
-              "name": "./mytextfieldToggle",
+              "name": "./mytextToggle",
               "text": "Show/Hide Text",
               "granite:class": "wcmio-dialog-showhide",
               "granite:data": {
