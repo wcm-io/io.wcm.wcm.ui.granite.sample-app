@@ -145,6 +145,9 @@
             "myfileupload": {
               "sling:resourceType": "cq/gui/components/authoring/dialog/fileupload",
               "granite:class": "myfileupload-toggle",
+              "granite:data": {
+                "showhidetargetvalue": "true"
+              },
               "name": "./myfileupload",
               "fileNameParameter": "./myfileuploadFileName",
               "required": true,
