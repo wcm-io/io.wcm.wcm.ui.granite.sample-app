@@ -133,6 +133,25 @@
               "validation": ["wcmio.pattern"]
             },
 
+            "myfileuploadToggle": {
+              "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
+              "name": "./myfileuploadToggle",
+              "text": "Show/Hide Fileupload",
+              "granite:class": "wcmio-dialog-showhide",
+              "granite:data": {
+                "wcmio-dialog-showhide-target": ".myfileupload-toggle"
+              }
+            },
+            "myfileupload": {
+              "sling:resourceType": "cq/gui/components/authoring/dialog/fileupload",
+              "granite:class": "myfileupload-toggle",
+              "name": "./myfileupload",
+              "fileNameParameter": "./myfileuploadFileName",
+              "required": true,
+              "fieldLabel": "Fileupload (with validation)",
+              "fieldDescription": "This is only visible when the checkbox is checked."
+            },
+
             "mynestedselectToggle": {
               "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
               "name": "./mynestedselectToggle",
