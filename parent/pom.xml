@@ -81,7 +81,7 @@
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.all</artifactId>
-        <version>2.30.2</version>
+        <version>2.30.3</version>
         <type>zip</type>
       </dependency>
 
