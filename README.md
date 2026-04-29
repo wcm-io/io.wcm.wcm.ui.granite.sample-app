@@ -42,5 +42,6 @@ Open the authoring sample pages at<br/>
 System requirements
 -------------------
 
-* AEM 6.5.17+, AEM 6.6 or AEMaaCS SDK
-* Java 11
+* AEM 6.5.24+, AEM 6.62+ or AEMaaCS SDK
+* Java 11 (runtime)
+* Java 21 (build)
